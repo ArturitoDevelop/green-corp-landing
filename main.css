@@ -8,6 +8,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
 }
 .header__logo{
     height: 30px;
@@ -39,7 +43,25 @@ button {
 .about__sun-image {
     width: 100px;
     height: 100px;
+    animation-name: rotation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: absolute;
+    /* top: 0; 
+    left:0; */
+    
   }
+
+  @keyframes rotation {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+}
+
   .about {
     display: flex;
     justify-content: space-around;
@@ -53,17 +75,16 @@ button {
   .about h1 {
     font-size: 70px;
     line-height: 76px;
-
-  }
-  .about p{
+  } 
+  .about p {
     font-size: 18px;
     line-height: 30px;
     opacity: 0.8;
   }
-  .about button{
+  .about button {
     font-size: 18px;
-    border-radius: 20px;
     padding: 20px 25px;
+    border-radius: 20px;
     margin-top: 20px;
   }
   .about__info {
@@ -168,3 +189,59 @@ button {
   .footer__links a {
     margin-bottom: 15px;
   }
+  /* Планшеты */
+@media (max-width: 1024px) {
+  .about {
+      padding: 115px 20px;
+  }
+  .about h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+  .about__image {
+      width: 280px;
+  }
+  .about__sun-image {
+      width: 75px;
+      height: 75px;
+  }
+}
+/* Мобильные устройства */
+@media (max-width: 720px) {
+  header {
+      padding: 10px;
+  }
+  .header__logo {
+      height: 20px;
+  }
+  header a {
+      margin-right: 10px;
+  }
+  .about {
+      flex-direction: column-reverse;
+      padding: 50px 10px;
+  }
+  .about h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+  .about__image {
+      width: 280px;
+  }
+  .about__sun-image {
+      width: 75px;
+      height: 75px;
+  }
+  .form {
+      padding: 50px 10px;
+  }
+  .form h1 {
+      font-size: 36px;
+  }
+  footer {
+      padding: 50px 10px;
+  }
+  .footer__container {
+      flex-direction: column;
+  }
+}
